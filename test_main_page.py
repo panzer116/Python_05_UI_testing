@@ -3,7 +3,9 @@ import time
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 
+
 link = 'http://selenium1py.pythonanywhere.com/ru/'
+
 
 # Тест проверяет, что пользователь может перейти с главной страницы сайта на страницу с товарами
 @pytest.mark.smoke
@@ -16,6 +18,7 @@ def test_guest_can_go_to_catalogue(browser):
     page.should_be_link_to_product_page()
     # переходит на страницу с товарами
     page.go_to_product_page()
+
 
 # Тест проверяет, что пользователь может перейти с главной страницы сайта на страницу авторизации
 @pytest.mark.regression
@@ -30,6 +33,7 @@ def test_guest_can_go_to_login_page(browser):
     page = LoginPage(browser, link)
     # проверяет, что текущая страница является страницей авторизации
     page.should_be_login_page()
+
 
 # Тест проверяет, что пользователь может зарегистрироваться
 def test_user_сan_autorize(browser):

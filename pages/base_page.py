@@ -1,6 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
 from .locators import BasePageLocators
 
+
 class BasePage():
 
     def __init__(self, browser, link):
@@ -19,5 +20,3 @@ class BasePage():
 
     def should_be_autorized_user(self):
         assert self.element_is_present(*BasePageLocators.USER_ICON)
-
-
